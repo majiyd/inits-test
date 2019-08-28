@@ -1,6 +1,8 @@
 import {createStore} from 'redux'
+import * as actionTypes from '../actions'
 
 const initialState = {
+  shouldAdminPageShow: false,
   listings: [{
     id: 1,
     name: "inits",
@@ -27,8 +29,22 @@ const initialState = {
 }
 
 function reducer(state = initialState, action) {
-  // console.log('reducer', state, action);
-  return state;
+  switch (action.type){
+    case actionTypes.SHOW_ADMIN_PAGE: {
+      return {
+        ...state,
+        shouldAdminPageShow: true
+      }
+    }
+    case actionTypes.HIDE_ADMIN_PAGE: {
+      return {
+        ...state,
+        shouldAdminPageShow: false
+      }
+    }
+    default:
+      return state
+  }
 }
 
 const store = createStore(reducer)

@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import {Provider} from "react-redux"
 import store from './redux/store'
 import App  from "./App";
-
-
 /**
  * @desc This is the entry point of the app, it contains the root container.
  * @import App container, redux store, and reset.css
