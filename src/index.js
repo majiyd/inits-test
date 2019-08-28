@@ -2,6 +2,7 @@ import React, {PureComponent}from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from "react-redux"
 import store from './redux/store'
+import './reset.css'
 import App  from "./App";
 /**
  * @desc This is the entry point of the app, it contains the root container.

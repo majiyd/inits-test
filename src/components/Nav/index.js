@@ -14,9 +14,9 @@ const Nav = (props) => {
     props.clickOnHideAdminPage()
   }
   return (
-    <div>
-      <div onClick={handleShowAdmin}>Admin</div>
-      <div onClick={handleHideAdmin}>Listing</div>
+    <div style={{display: "flex", padding: "3%", backgroundColor: "white"}}>
+      <div style={{marginRight: "3%", cursor: "pointer"}} onClick={handleShowAdmin}>Admin</div>
+      <div style={{marginRight: "3%", cursor: "pointer"}}onClick={handleHideAdmin}>Listing</div>
     </div>
   )
 }

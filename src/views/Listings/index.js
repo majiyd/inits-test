@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const Listings = (props) => {
   return(
-    <div>
+    <div style={{width: "70%", margin:"auto", marginTop: "3%"}}>
       {props.listings.map(listing => (
         <Listing 
           key={listing.id}

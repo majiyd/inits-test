@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {inputListingName, inputListingAddress, inputListingUrl, inputListingCategories, inputListingPhoneNumber, inputListingEmail, inputListingDescription, addListing} from "../../redux/actions/actionCreators/uiActionCreators";
+import styles from './Admin.module.css'
 
 /**
  * create action type
@@ -54,16 +55,16 @@ const Admin = (props) => {
     e.preventDefault()
   }
   return(
-    <div>
+    <div className={styles.admin} >
       <form onSubmit={handleSubmit}>
-        <input placeholder="Name" onChange={handleListingNameInput}/>
-        <input placeholder="Address" onChange={handleListingAddressInput}/>
+        <input placeholder="Name" required onChange={handleListingNameInput}/>
+        <input placeholder="Address" required onChange={handleListingAddressInput}/>
         <textarea defaultValue="Add description" onChange={handleListingDescriptionInput}></textarea>
-        <input placeholder="website" onChange={handleListingUrlInput}/>
-        <input placeholder="phone Number" onChange={handleListingPhoneNumberInput}/>
-        <input placeholder="email" onChange={handleListingEmailInput}/>
-        <input placeholder="category" onChange={handleListingCategoryInput}/>
-        <input type="submit" value="add" />
+        <input placeholder="website" required onChange={handleListingUrlInput}/>
+        <input placeholder="phone Number" required onChange={handleListingPhoneNumberInput}/>
+        <input placeholder="email" required onChange={handleListingEmailInput}/>
+        <input placeholder="category" required onChange={handleListingCategoryInput}/>
+        <input type="submit" value="Add" className={styles.button} />
       </form>
     </div>
   )

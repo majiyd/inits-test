@@ -1,0 +1,24 @@
+.admin{
+  width: 70%;
+  margin: auto;
+  margin-top: 3%;
+}
+.admin input, .admin textarea{
+  display: block;
+  padding: 7px;
+  width: 70%;
+  margin-bottom: 3%;
+  font-size: 1.25rem;
+  border-radius: 8px;
+}
+.admin textarea{
+  height: 100px;
+}
+
+.button{
+  width: auto !important;
+  padding: 2% 7% !important;
+  color:white;
+  background-color: rgb(49, 223, 78);
+  border: 0;
+}

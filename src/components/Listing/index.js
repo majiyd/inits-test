@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './Listing.module.css'
 const Listing = ({
   id,
   name,
@@ -10,21 +11,19 @@ const Listing = ({
   email
 }) => {
   return (
-    <div>
+    <div className={styles.listing}>
+      <h2>{name}</h2>
+      <h3>{address}</h3>
+      <p>{description}</p>
+      <p>
+        <span>{url}</span> | 
+        <span>{phoneNumber}</span> | 
+        <span>{email} </span>
+      </p>
       <div>
-        <h2>{name}</h2>
-        <h3>{address}</h3>
-        <p>{description}</p>
-        <p>
-          <span>{url}</span> | 
-          <span>{phoneNumber}</span> | 
-          <span>{email} </span>
-        </p>
-        <div>
-          {categories.map(category => (
-            <span key={category}> {category} </span>
-          ))}
-        </div>
+        {categories.map(category => (
+          <span key={category}> {category} </span>
+        ))}
       </div>
     </div>
 
