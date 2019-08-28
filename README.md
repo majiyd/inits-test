@@ -1,17 +1,15 @@
-In this simple project, i'll be improving on my k
-nowledge of Redux. I'll make a simple contact list app.<br>
+This is the implementation of the test by inits.ng<br>
   
 I'll be making use of
 1. React
 2. Redux
 3. Css Modules
-4. [Mockapi.io](https://www.mockapi.io) - used to fake real lifeAPI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It can be viewed in the browser [here](https://majiyd.github.io/inits-test).
 
 To get the code, clone the repo <br>
 ```
-git clone https://github.com/majiyd/contact-app.git
+git clone https://github.com/majiyd/inits-test.git
 ```
 then run  
 ```
@@ -23,3 +21,6 @@ npm start
 ```
 this runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.<br>
+
+
+`Note:` Please note that this is as far as i could go because of time constrait and fatigue. This is ny no means the limits of my ability.
