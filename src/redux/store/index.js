@@ -2,6 +2,7 @@ import {createStore} from 'redux'
 
 const initialState = {
   listings: [{
+    id: 1,
     name: "inits",
     address: "16 some area, idk",
     url: "inits.ng",
@@ -12,6 +13,7 @@ const initialState = {
     phoneNumber: "+2345839",
     email: "suyiuon@jhdf.com"
   }, {
+    id: 2,
     name: "glow",
     address: "glo plaza",
     url: "glo.com.ng",
