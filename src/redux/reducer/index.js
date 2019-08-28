@@ -1,6 +1,7 @@
 
 import * as actionTypes from '../actions'
 import INITIAL_STATE from './initialState'
+import uniqid from "uniqid";
 
 
 export function reducer(state = INITIAL_STATE, action) {
@@ -82,6 +83,19 @@ export function reducer(state = INITIAL_STATE, action) {
           ...state.newListing,
           description: action.payload
         }
+      }
+    }
+    case actionTypes.ADD_LISTING:{
+      const newListing = {
+        id: uniqid('id-'),
+        ...action.payload
+      }
+      return{
+        ...state,
+        listings:[
+          ...state.listings,
+          newListing
+        ]
       }
     }
     default:

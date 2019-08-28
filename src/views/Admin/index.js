@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {inputListingName, inputListingAddress, inputListingUrl, inputListingCategories, inputListingPhoneNumber, inputListingEmail, inputListingDescription} from "../../redux/actions/actionCreators/uiActionCreators";
+import {inputListingName, inputListingAddress, inputListingUrl, inputListingCategories, inputListingPhoneNumber, inputListingEmail, inputListingDescription, addListing} from "../../redux/actions/actionCreators/uiActionCreators";
 
 /**
  * create action type
@@ -23,7 +23,8 @@ const mapDispatchToProps = {
   inputListingPhoneNumber,
   inputListingCategories,
   inputListingEmail,
-  inputListingDescription
+  inputListingDescription,
+  addListing
 
 }
 const Admin = (props) => {
@@ -48,9 +49,13 @@ const Admin = (props) => {
   const handleListingCategoryInput = e => {
     props.inputListingCategories(e.target.value)
   }
+  const handleSubmit = e => {
+    props.addListing(props.newListing)
+    e.preventDefault()
+  }
   return(
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input placeholder="Name" onChange={handleListingNameInput}/>
         <input placeholder="Address" onChange={handleListingAddressInput}/>
         <textarea defaultValue="Add description" onChange={handleListingDescriptionInput}></textarea>

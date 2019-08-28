@@ -55,3 +55,10 @@ export const inputListingDescription = (value) => {
     payload: value
   }
 }
+
+export const addListing = (listing) => {
+  return{
+    type: actionTypes.ADD_LISTING,
+    payload: listing
+  }
+}
