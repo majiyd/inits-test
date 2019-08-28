@@ -1,9 +1,8 @@
 import React, {PureComponent}from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux'
+import {Provider} from "react-redux"
 import store from './redux/store'
-import App from "./App/App"
-import './css/reset.css'
+import App  from "./App";
 
 
 /**
@@ -20,6 +19,7 @@ class Root extends PureComponent{
       <Provider store={store}>
         <App />
       </Provider>
+
     )
   }
 }
