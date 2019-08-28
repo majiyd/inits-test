@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {inputListingName, inputListingAddress, inputListingUrl, inputListingCategories, inputListingPhoneNumber, inputListingEmail, inputListingDescription, addListing} from "../../redux/actions/actionCreators/uiActionCreators";
+import {inputListingName, inputListingAddress, inputListingUrl, inputListingCategories, inputListingPhoneNumber, inputListingEmail, inputListingDescription, addListing, notification, clickOnHideAdminPage} from "../../redux/actions/actionCreators/uiActionCreators";
 import styles from './Admin.module.css'
 
 /**
@@ -25,7 +25,10 @@ const mapDispatchToProps = {
   inputListingCategories,
   inputListingEmail,
   inputListingDescription,
-  addListing
+  addListing,
+  notification,
+  clickOnHideAdminPage
+
 
 }
 const Admin = (props) => {
@@ -52,6 +55,8 @@ const Admin = (props) => {
   }
   const handleSubmit = e => {
     props.addListing(props.newListing)
+    props.notification()
+    props.clickOnHideAdminPage()
     e.preventDefault()
   }
   return(

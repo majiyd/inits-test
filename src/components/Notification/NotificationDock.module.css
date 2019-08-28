@@ -1,0 +1,6 @@
+.notification_dock{
+  padding: 0px 5px;
+  position: fixed;
+  top: 50px;
+  right: 5px;
+}

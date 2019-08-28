@@ -1,0 +1,46 @@
+.notice{
+  width: 300px;
+  padding: 20px 10px;
+  text-align: center;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  font-size: 12pt;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: notificationDisappear 4.8s;
+  opacity: 0;
+}
+.success{
+  composes: notice;
+  background-color: #a6f0a6;
+  color: #2b912b;
+}
+.error{
+  composes: notice;
+  background-color: lightcoral;
+  color: #cf0a0a;
+}
+.close{
+  position: absolute;
+  top: 0px;
+  right: 7px;
+  cursor: pointer;
+  color: #444;
+  font-family: cursive;
+}
+.close:hover{
+  color: #cf0a0a;
+  text-shadow: 0px 1px 2px rgba(255, 0, 0, 0.514);
+}
+
+@keyframes notificationDisappear {
+  0%{
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

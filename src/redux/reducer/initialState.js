@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  shouldAdminPageShow: true,
+  shouldAdminPageShow: false,
   newListing: {
     name:"",
     address: "",
@@ -8,6 +8,7 @@ const INITIAL_STATE = {
     phoneNumber:"",
     email: "",
   },
+  notifications: [ ],
   listings: [{
     id: 1,
     name: "inits",

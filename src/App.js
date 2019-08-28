@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import Listings from './views/Listings'
 import Admin from './views/Admin'
 import Nav from './components/Nav'
+import NotificationDock from './components/Notification/NotificationDock'
 
 const mapStateToProps =  state => {
   return{
@@ -13,6 +14,7 @@ const App = (props) => {
   return(
     <div>
     <Nav />
+    <NotificationDock />
     {props.showAdminPage ? (<Admin />):(<Listings />)}
     </div>
   )

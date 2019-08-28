@@ -98,6 +98,16 @@ export function reducer(state = INITIAL_STATE, action) {
         ]
       }
     }
+    case actionTypes.NOTIFICATION: {
+      const notification = [{
+        id: uniqid('id-'),
+        message: action.payload
+      }]
+      return {
+        ...state,
+        notifications: notification
+      }
+    }
     default:
       return state
   }

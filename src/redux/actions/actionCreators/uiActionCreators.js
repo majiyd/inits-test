@@ -62,3 +62,10 @@ export const addListing = (listing) => {
     payload: listing
   }
 }
+
+export const notification = () => {
+  return{
+    type: actionTypes.NOTIFICATION,
+    payload: "Listing Added Successfully"
+  }
+}
