@@ -85,7 +85,12 @@ export function reducer(state = INITIAL_STATE, action) {
         listings:[
           ...state.listings,
           newListing
-        ]
+        ],
+        newListing: {
+          ...state.newListing,
+          categories: []
+        },
+        categories: INITIAL_STATE.categories
       }
     }
     case actionTypes.NOTIFICATION: {
