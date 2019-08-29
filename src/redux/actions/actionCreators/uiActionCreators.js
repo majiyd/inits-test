@@ -31,12 +31,7 @@ export const inputListingUrl = (value) => {
     payload: value
   }
 }
-export const inputListingCategories = (value) => {
-  return {
-    type: actionTypes.INPUT_LISTING_CATEGORIES,
-    payload: value
-  }
-}
+
 export const inputListingPhoneNumber = (value) => {
   return {
     type: actionTypes.INPUT_LISTING_PHONENUMBER,
@@ -67,5 +62,12 @@ export const notification = () => {
   return{
     type: actionTypes.NOTIFICATION,
     payload: "Listing Added Successfully"
+  }
+}
+
+export const addCategory = (category) => {
+  return{
+    type: actionTypes.ADD_CATEGORY,
+    payload: category
   }
 }

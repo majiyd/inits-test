@@ -9,6 +9,13 @@ const INITIAL_STATE = {
     email: "",
   },
   notifications: [ ],
+  categories: [
+    "Web Development",
+    "Android",
+    "Desktop Apps",
+    "Networking",
+    "Telecoms",
+  ],
   listings: [{
     id: 1,
     name: "inits",

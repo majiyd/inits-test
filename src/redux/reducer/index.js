@@ -48,16 +48,6 @@ export function reducer(state = INITIAL_STATE, action) {
         }
       }
     }
-
-    case actionTypes.INPUT_LISTING_CATEGORIES: {
-      return{
-        ...state, 
-        newListing: {
-          ...state.newListing,
-          categories: [action.payload]
-        }
-      }
-    }
     case actionTypes.INPUT_LISTING_PHONENUMBER: {
       return{
         ...state, 
@@ -106,6 +96,25 @@ export function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         notifications: notification
+      }
+    }
+    case actionTypes.ADD_CATEGORY: {
+      console.log(action.payload)
+      const categories = state.categories.filter(
+        category => (
+          category !== action.payload
+        )
+      )
+      return {
+        ...state,
+        categories: categories,
+        newListing: {
+          ...state.newListing,
+          categories: [
+            ...state.newListing.categories,
+            action.payload
+          ]
+        }
       }
     }
     default:

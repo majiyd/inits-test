@@ -1,7 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {inputListingName, inputListingAddress, inputListingUrl, inputListingCategories, inputListingPhoneNumber, inputListingEmail, inputListingDescription, addListing, notification, clickOnHideAdminPage} from "../../redux/actions/actionCreators/uiActionCreators";
+import {inputListingName, inputListingAddress, inputListingUrl, inputListingPhoneNumber, inputListingEmail, inputListingDescription, addListing, notification, clickOnHideAdminPage} from "../../redux/actions/actionCreators/uiActionCreators";
 import styles from './Admin.module.css'
+import Category from "../../components/Category"
 
 /**
  * create action type
@@ -14,7 +15,8 @@ import styles from './Admin.module.css'
  */
 const mapStateToProps = state => {
   return{
-    newListing: state.newListing
+    newListing: state.newListing,
+    categories: state.categories
   }
 }
 const mapDispatchToProps = {
@@ -22,14 +24,11 @@ const mapDispatchToProps = {
   inputListingAddress,
   inputListingUrl,
   inputListingPhoneNumber,
-  inputListingCategories,
   inputListingEmail,
   inputListingDescription,
   addListing,
   notification,
-  clickOnHideAdminPage
-
-
+  clickOnHideAdminPage,
 }
 const Admin = (props) => {
   const handleListingNameInput = e => {
@@ -50,9 +49,7 @@ const Admin = (props) => {
   const handleListingEmailInput = e => {
     props.inputListingEmail(e.target.value)
   }
-  const handleListingCategoryInput = e => {
-    props.inputListingCategories(e.target.value)
-  }
+
   const handleSubmit = e => {
     props.addListing(props.newListing)
     props.notification()
@@ -68,7 +65,29 @@ const Admin = (props) => {
         <input placeholder="website" required onChange={handleListingUrlInput}/>
         <input placeholder="phone Number" required onChange={handleListingPhoneNumberInput}/>
         <input placeholder="email" required onChange={handleListingEmailInput}/>
-        <input placeholder="category" required onChange={handleListingCategoryInput}/>
+        <h2>Categories</h2>
+        <div style={{padding: "3%", margin: "3% 0"}}>
+          {props.newListing.categories.map(category => (
+            <span key={category} id={category}
+              style={{
+                padding: 3,
+                backgroundColor: "#ff3333",
+                color: "#fff",
+                marginRight: 5,
+                cursor: "pointer",
+                borderRadius: 3
+              }}
+            >
+              {category}
+            </span>
+          ))}
+        </div>
+        <h3>Add Categories</h3>
+        <div style={{padding:"3% 0", margin: "1% 0"}}>
+          {props.categories.map(category =>(
+            <Category key={category} category={category} id={category}/>
+          ))}
+        </div>
         <input type="submit" value="Add" className={styles.button} />
       </form>
     </div>

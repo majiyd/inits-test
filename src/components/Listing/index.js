@@ -22,7 +22,20 @@ const Listing = ({
       </p>
       <div>
         {categories.map(category => (
-          <span key={category}> {category} </span>
+          <span key={category} id={category}
+            style={{
+              padding: 3,
+              backgroundColor: "#ff3333",
+              color: "#fff",
+              position: "relative",
+              top: 5,
+              marginRight: 5,
+              cursor: "pointer",
+              borderRadius: 3
+            }}
+          >
+            {category}
+          </span>
         ))}
       </div>
     </div>
